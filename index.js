@@ -145,11 +145,26 @@ app.post("/webhook", (req, res) => {
     agent.add(payload);
     // agent.add(result);
   }
+  function calculateRectangleArea(agent) {
+    let wide = agent.parameters.wide;
+    let length = agent.parameters.length;
+    let result = wide * length;
+    agent.add(
+      "พื้นที่รูปสี่เหลี่ยมขนาด กว้าง" +
+        wide +
+        " ซม. ยาว " +
+        length +
+        " =  " +
+        result +
+        "ตร.ซม."
+    );
+  }
 
   let intentMap = new Map();
   intentMap.set("Default Welcome Intent", welcome);
   intentMap.set("Default Fallback Intent", fallback);
   intentMap.set("BMI - custom - YES", bodyMassIndex);
+  intentMap.set("area - rectangle - custom - yes", calculateRectangleArea);
   agent.handleRequest(intentMap);
 });
 
