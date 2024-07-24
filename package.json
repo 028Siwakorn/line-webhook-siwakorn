@@ -16,7 +16,7 @@
     "chatbot",
     "webhook"
   ],
-  "author": "Worachet Uttha",
+  "author": "Siwakorn Kleebmek",
   "license": "ISC",
   "dependencies": {
     "actions-on-google": "^2.2.0",
